@@ -12,13 +12,51 @@
     .review-hero p { max-width: 760px; }
     .review-grid { display: grid; gap: 28px; }
     .review-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 12px 34px rgba(19,40,25,.08); }
-    .review-card img { width: 100%; border-radius: 18px; border: 1px solid var(--line); background: #fff; }
     .review-card h2 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); margin-bottom: 10px; }
     .review-card p, .review-card li { color: var(--muted); }
     .review-card ul { margin: 14px 0 0; }
     .review-label { display: inline-block; margin-bottom: 12px; padding: 8px 12px; border-radius: 999px; background: var(--green-100); color: var(--green-800); font-weight: 900; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; }
     .reference-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    @media (max-width: 900px) { .reference-grid { grid-template-columns: 1fr; } }
+    .reference-shot img { width: 100%; border-radius: 18px; border: 1px solid var(--line); background: #fff; }
+    .mockup-stage { position: relative; width: 100%; background: linear-gradient(180deg, #f7f4ec, #ede4d1); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+    .mockup-stage.side { aspect-ratio: 776 / 304; }
+    .mockup-stage.tailgate { aspect-ratio: 192 / 143; max-width: 620px; margin: 0 auto; }
+    .mockup-stage > img.base { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+    .overlay { position: absolute; inset: 0; }
+    .overlay img.logo { position: absolute; height: auto; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0,0,0,.22)); }
+    .band, .accent, .accent-2, .panel { position: absolute; }
+    .txt { position: absolute; font-family: Inter, Arial, sans-serif; font-weight: 900; letter-spacing: .02em; }
+    .txt.small { font-size: clamp(10px, 1.2vw, 16px); font-weight: 800; }
+    .txt.medium { font-size: clamp(13px, 1.8vw, 22px); }
+    .txt.large { font-size: clamp(18px, 2.6vw, 34px); }
+
+    .side.clean .band { left: 15%; top: 52%; width: 66%; height: 21%; background: rgba(24,51,33,.9); border-radius: 8px; }
+    .side.clean .accent { left: 15%; top: 50.5%; width: 66%; height: 1.8%; background: rgba(215,154,43,.98); }
+    .side.clean .accent-2 { left: 15%; top: 73%; width: 66%; height: 1.5%; background: rgba(242,230,209,.98); }
+    .side.clean img.logo { left: 16%; top: 27%; width: 29%; }
+    .side.clean .phone { left: 46%; top: 56%; color: #fff; }
+    .side.clean .services { left: 40%; top: 66%; color: #f2e6d1; }
+    .side.clean .city { right: 12%; top: 44%; color: #d79a2b; }
+
+    .side.bold .band { left: 14%; top: 48%; width: 29%; height: 26%; background: rgba(24,51,33,.92); clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%); }
+    .side.bold .panel { left: 38%; top: 52%; width: 44%; height: 22%; background: rgba(40,83,51,.92); clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%); }
+    .side.bold .accent { left: 14%; top: 46.5%; width: 68%; height: 1.8%; background: rgba(215,154,43,.98); }
+    .side.bold .accent-2 { left: 14%; top: 74%; width: 68%; height: 1.5%; background: rgba(242,230,209,.98); }
+    .side.bold img.logo { left: 16%; top: 27%; width: 26%; }
+    .side.bold .brand-a { left: 46%; top: 54%; color: #fff; }
+    .side.bold .brand-b { left: 46%; top: 64%; color: #f2e6d1; }
+    .side.bold .phone { left: 56%; top: 39%; color: #d79a2b; }
+
+    .tailgate.clean .panel { left: 17%; top: 29%; width: 66%; height: 42%; background: rgba(24,51,33,.86); border-radius: 18px; }
+    .tailgate.clean .accent { left: 17%; top: 27.5%; width: 66%; height: 1.9%; background: rgba(215,154,43,.98); }
+    .tailgate.clean .accent-2 { left: 17%; top: 71%; width: 66%; height: 1.5%; background: rgba(242,230,209,.98); }
+    .tailgate.clean img.logo { left: 28%; top: 34%; width: 44%; }
+    .tailgate.clean .phone { left: 27%; top: 58%; color: #fff; }
+    .tailgate.clean .services { left: 24%; top: 67%; color: #f2e6d1; }
+
+    @media (max-width: 900px) {
+      .reference-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -35,8 +73,8 @@
     <section class="review-hero">
       <div class="container">
         <p class="eyebrow">Internal Review</p>
-        <h1>Mammoth truck wrap rough layouts</h1>
-        <p>These are rough layout sketches placed on the actual truck photos to help choose direction before spending time polishing production art. The goal is a clean partial wrap that reads fast from the road.</p>
+        <h1>Mammoth truck wrap refined rough layouts</h1>
+        <p>These are cleaner browser-built mockups laid over the full truck photos so the proportions stay readable. Still rough, but much closer to how a partial wrap could actually be laid out.</p>
       </div>
     </section>
 
@@ -45,11 +83,11 @@
         <div class="review-card">
           <span class="review-label">Reference photos</span>
           <div class="reference-grid">
-            <div>
+            <div class="reference-shot">
               <img src="assets/truck-wrap-review/truck-side-reference.png" alt="Truck side reference photo">
               <p>Exact side-view truck photo.</p>
             </div>
-            <div>
+            <div class="reference-shot">
               <img src="assets/truck-wrap-review/truck-tailgate-reference.jpg" alt="Truck tailgate reference photo">
               <p>Tailgate reference photo.</p>
             </div>
@@ -59,36 +97,69 @@
         <div class="review-card">
           <span class="review-label">Concept A</span>
           <h2>Clean / professional partial wrap</h2>
-          <p>Heavier emphasis on the Mammoth brand, simpler lower-body color sweep, and readable phone + services text. Best fit if you want it to feel established and clean without looking too busy.</p>
-          <img src="assets/truck-wrap-review/mammoth-wrap-clean-rough.png" alt="Clean partial wrap concept for Mammoth Tree Service truck">
+          <p>This version keeps more white paint visible and lets the Mammoth logo lead. I think this is the safer, stronger direction if you want it to feel established and premium.</p>
+          <div class="mockup-stage side clean">
+            <img class="base" src="assets/truck-wrap-review/truck-side-reference.png" alt="Truck side clean wrap concept">
+            <div class="overlay">
+              <div class="band"></div>
+              <div class="accent"></div>
+              <div class="accent-2"></div>
+              <img class="logo" src="assets/mammoth-tree-service-logo.svg" alt="">
+              <div class="txt large phone">334-326-2020</div>
+              <div class="txt small services">TREE REMOVAL • TREE TRIMMING • STUMP GRINDING</div>
+              <div class="txt small city">TROY, ALABAMA</div>
+            </div>
+          </div>
           <ul>
-            <li>Large white space preserved</li>
-            <li>Dark green lower band with gold accent</li>
-            <li>Brand-first, less aggressive</li>
+            <li>Best if you want clean and credible</li>
+            <li>Big logo on the door area</li>
+            <li>Lower-body partial wrap instead of full coverage</li>
           </ul>
         </div>
 
         <div class="review-card">
           <span class="review-label">Concept B</span>
           <h2>Bolder / more aggressive partial wrap</h2>
-          <p>Stronger block treatment across the side for more distance impact. Better if you want the truck to feel more dominant on the road and more obviously branded from far away.</p>
-          <img src="assets/truck-wrap-review/mammoth-wrap-bold-rough.png" alt="Bold partial wrap concept for Mammoth Tree Service truck">
+          <p>This one pushes the side graphics harder so it has more road presence. Better if the truck needs to feel louder and easier to identify from farther away.</p>
+          <div class="mockup-stage side bold">
+            <img class="base" src="assets/truck-wrap-review/truck-side-reference.png" alt="Truck side bold wrap concept">
+            <div class="overlay">
+              <div class="band"></div>
+              <div class="panel"></div>
+              <div class="accent"></div>
+              <div class="accent-2"></div>
+              <img class="logo" src="assets/mammoth-tree-service-logo.svg" alt="">
+              <div class="txt medium phone">334-326-2020</div>
+              <div class="txt large brand-a">MAMMOTH</div>
+              <div class="txt medium brand-b">TREE SERVICE</div>
+            </div>
+          </div>
           <ul>
-            <li>Stronger side presence</li>
-            <li>Bigger wordmark feeling</li>
-            <li>More visual punch, slightly less subtle</li>
+            <li>More aggressive on the side profile</li>
+            <li>Stronger from a distance</li>
+            <li>Feels a little more “work truck” / bold brand</li>
           </ul>
         </div>
 
         <div class="review-card">
           <span class="review-label">Tailgate</span>
-          <h2>Clean tailgate direction</h2>
-          <p>I’d keep the tailgate simpler than the side: centered logo, strong phone number, and short service line. Tailgates get read quickly at stoplights, so simple usually wins.</p>
-          <img src="assets/truck-wrap-review/mammoth-tailgate-clean-rough.png" alt="Tailgate wrap concept for Mammoth Tree Service truck">
+          <h2>Simple tailgate direction</h2>
+          <p>I’d keep the tailgate simpler than the side: logo centered high, phone number dominant, services line short. At a stoplight, simple wins.</p>
+          <div class="mockup-stage tailgate clean">
+            <img class="base" src="assets/truck-wrap-review/truck-tailgate-reference.jpg" alt="Truck tailgate concept">
+            <div class="overlay">
+              <div class="panel"></div>
+              <div class="accent"></div>
+              <div class="accent-2"></div>
+              <img class="logo" src="assets/mammoth-tree-service-logo.svg" alt="">
+              <div class="txt medium phone">334-326-2020</div>
+              <div class="txt small services">TREE REMOVAL • TRIMMING • STUMP GRINDING</div>
+            </div>
+          </div>
           <ul>
-            <li>Big centered logo</li>
-            <li>Phone number made the hero</li>
-            <li>Short services line only</li>
+            <li>Rear view focused on phone number</li>
+            <li>Centered brand block for clarity</li>
+            <li>Easy for a wrap shop to simplify into production art</li>
           </ul>
         </div>
       </div>
