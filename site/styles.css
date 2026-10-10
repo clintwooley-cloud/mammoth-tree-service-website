@@ -145,6 +145,20 @@ h3 { font-size: 1.35rem; }
   width: 100%; border: 1px solid var(--line); border-radius: 13px; padding: 12px 13px; font: inherit; color: var(--ink); background: var(--white);
 }
 .quote-form button { width: fit-content; }
+.checkbox-field {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.checkbox-field input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+.checkbox-field a { color: var(--green-800); text-decoration: underline; }
 .guide-item { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 18px; }
 .guide-item strong { color: var(--green-800); font-size: 1.1rem; }
 .guide-item p { color: var(--muted); margin-bottom: 0; }
@@ -177,6 +191,21 @@ h3 { font-size: 1.35rem; }
 .after-submit { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 18px; }
 .after-submit h3 { font-size: 1.1rem; color: var(--green-800); }
 .after-submit p { color: var(--muted); margin-bottom: 0; }
+.legal-copy h2 {
+  margin-top: 34px;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  color: var(--green-800);
+}
+.legal-copy h2:first-child { margin-top: 0; }
+.legal-copy p {
+  color: var(--muted);
+  font-size: 1.03rem;
+  margin: 12px 0 0;
+}
+.legal-copy a {
+  color: var(--green-800);
+  text-decoration: underline;
+}
 @media (max-width: 480px) {
   .container { width: min(var(--max), calc(100% - 28px)); }
   .header-inner { gap: 10px; min-height: 68px; }
