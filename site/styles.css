@@ -123,12 +123,23 @@ h3 { font-size: 1.35rem; }
 .cards { display: grid; gap: 20px; }
 .cards.three { grid-template-columns: repeat(3, 1fr); }
 .card { background: var(--green-100); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
-.card span { color: var(--gold); font-weight: 950; }
+.card > span { color: var(--gold); font-weight: 950; }
 .card p { color: var(--muted); }
 .card a { color: var(--green-800); font-weight: 900; }
-.review-card .review-stars { display: inline-block; font-size: 1.1rem; letter-spacing: .12em; margin-bottom: 10px; }
-.review-card .review-source { margin-top: 18px; font-weight: 850; color: var(--green-800); }
-.review-cta-card h3 { margin-top: 6px; margin-bottom: 10px; }
+.review-card,
+.testimonial-card { background: var(--white); box-shadow: 0 16px 40px rgba(19,40,25,.08); }
+.review-card .review-stars,
+.testimonial-card .review-stars { display: inline-block; font-size: 1.1rem; letter-spacing: .12em; margin-bottom: 12px; }
+.review-card .review-source,
+.testimonial-card .review-source { margin-top: 18px; font-weight: 850; color: var(--green-800); }
+.review-cta-card h3,
+.testimonial-cta-card h3 { margin-top: 6px; margin-bottom: 10px; }
+.testimonial-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.testimonial-badge { display: inline-flex; align-items: center; padding: 7px 11px; border-radius: 999px; background: var(--cream); border: 1px solid var(--line); color: var(--green-800); font-size: .78rem; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
+.testimonial-quote { margin: 0; color: var(--ink); font-size: 1.04rem; line-height: 1.7; }
+.testimonial-meta { margin-top: 18px; font-weight: 850; color: var(--green-800); }
+.review-themes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.review-themes span { display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 999px; background: var(--green-100); color: var(--green-800); font-size: .86rem; font-weight: 850; border: 1px solid var(--line); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: center; }
 .split.aligned { align-items: start; }
 .checklist { font-size: 1.12rem; color: rgba(255,255,255,.82); }
