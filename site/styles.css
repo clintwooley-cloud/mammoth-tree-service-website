@@ -126,6 +126,9 @@ h3 { font-size: 1.35rem; }
 .card span { color: var(--gold); font-weight: 950; }
 .card p { color: var(--muted); }
 .card a { color: var(--green-800); font-weight: 900; }
+.review-card .review-stars { display: inline-block; font-size: 1.1rem; letter-spacing: .12em; margin-bottom: 10px; }
+.review-card .review-source { margin-top: 18px; font-weight: 850; color: var(--green-800); }
+.review-cta-card h3 { margin-top: 6px; margin-bottom: 10px; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: center; }
 .split.aligned { align-items: start; }
 .checklist { font-size: 1.12rem; color: rgba(255,255,255,.82); }
